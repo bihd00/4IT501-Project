@@ -1,0 +1,16 @@
+.venv/
+venv/
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+*.pyc
+.pipenv/
+build/
+dist/
+*.log
+*.ini
+*.cfg
+*.lock
+
+env.sh
+.env
