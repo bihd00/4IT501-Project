@@ -1,7 +1,7 @@
 # SSBI Project
 
 ## Setup
-- craete a new virutal environment at the root of this repo
+- create a new virutal environment at the root of this repo
   ```shell
   # /your/path/to/root/of/this/repo
   python -m venv venv
