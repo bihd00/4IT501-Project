@@ -1,3 +1,4 @@
+from typing import List, Any
 from pyodbc import Connection
 from pandas import DataFrame
 from pandas import read_sql
@@ -211,9 +212,9 @@ def set_identity_on_orders_on(conn: Connection):
         print('[ERROR]', e)
 
 
-def insert_to_orders(
+def bulk_insert_to_orders(
     conn: Connection,
-    *args
+    records: List[Any]
 ) -> None:
     sql = f'''
         INSERT INTO
@@ -246,7 +247,8 @@ def insert_to_orders(
     '''
     try:
         cursor = conn.cursor()
-        cursor.execute(sql, tuple(args))
+        cursor.fast_executemany = True
+        cursor.executemany(sql, records)
         cursor.commit()
     except Exception as e:
         print('[ERROR]', e)
