@@ -12,3 +12,5 @@
   # /your/path/to/root/of/this/repo
   source ./scripts/env.sh
   ```
+
+test
