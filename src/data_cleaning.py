@@ -11,13 +11,9 @@ def clean_returns(df: pd.DataFrame) -> pd.DataFrame:
     cleaned_df['isReturned'] = cleaned_df['isReturned'].astype('bool')
     return cleaned_df
 
+
 def clean_quotas(df: pd.DataFrame) -> pd.DataFrame:
-    cleaned_df = df.drop(['Unnamed: 5'], axis=1)
-    cleaned_df = cleaned_df.dropna()
+    cleaned_df = df.copy().dropna()
     cleaned_df.columns = cleaned_df.iloc[0]
     cleaned_df = cleaned_df[1:]
     return cleaned_df
-
-def union_sales(data_2020,data_2021,data_2022,data_2023):
-    union_data = pd.concat([data_2020, data_2021, data_2022, data_2023])
-    return union_data
