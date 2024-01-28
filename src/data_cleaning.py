@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import re
 
 def clean_returns(df):
     df1 = df.drop(['Order ID', 'Product ID', 'Sub-Category', 'Manufacturer','Product Name','Return Reason','Notes'],axis=1)
