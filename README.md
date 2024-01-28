@@ -16,3 +16,4 @@
   ```shell
   python -m pip install -r requirements.txt
   ```
+- open and run [src/main.ipynb](/src/main.ipynb)
