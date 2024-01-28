@@ -12,5 +12,7 @@
   # /your/path/to/root/of/this/repo
   source ./scripts/env.sh
   ```
-
-test
+- install requirements
+  ```shell
+  python -m pip install -r requirements.txt
+  ```
