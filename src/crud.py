@@ -171,6 +171,7 @@ def create_orders(conn: Connection) -> None:
         Customer_Name VARCHAR(255),
         Product_ID VARCHAR(30),
         Product_Name VARCHAR(255),
+        Product_Brand VARCHAR(100),
         Quantity INT,
         Sales FLOAT,
         Discount FLOAT,
@@ -234,6 +235,7 @@ def bulk_insert_to_orders(
             Customer_Name,
             Product_ID,
             Product_Name,
+            Product_Brand,
             Quantity,
             Sales,
             Discount,
@@ -243,7 +245,7 @@ def bulk_insert_to_orders(
             Ship_Mode
         )
         VALUES
-        ({("?,"*21)[:-1]})
+        ({("?,"*22)[:-1]})
     '''
     try:
         cursor = conn.cursor()
