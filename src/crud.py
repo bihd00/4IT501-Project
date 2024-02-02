@@ -178,7 +178,9 @@ def create_orders(conn: Connection) -> None:
         Profit FLOAT,
         Order_Date DATE,
         Ship_Date DATE,
-        Ship_Mode VARCHAR(20)
+        Ship_Mode VARCHAR(20),
+        Order_Year INT,
+        Order_Month INT
     )
     '''
     try:
@@ -242,10 +244,12 @@ def bulk_insert_to_orders(
             Profit,
             Order_Date,
             Ship_Date,
-            Ship_Mode
+            Ship_Mode,
+            Order_Year,
+            Order_Month
         )
         VALUES
-        ({("?,"*22)[:-1]})
+        ({("?,"*24)[:-1]})
     '''
     try:
         cursor = conn.cursor()
